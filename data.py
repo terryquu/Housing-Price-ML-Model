@@ -1,6 +1,15 @@
 import pandas as pd
-from sklearn.datasets import fetch_california_housing
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns
 
-cali_housing = fetch_california_housing(as_frame = True)
+csv_path = "Housing-Price-ML-Model/kaggle_housing.csv"
+df = pd.read_csv(csv_path)
 
-print(cali_housing.frame.head())
+price_per_room = np.zeros(5000, dtype=float)
+price_series = df['Price']
+rooms_series = df['Avg. Area Number of Rooms']
+
+df['Price Per Room'] = data['Price'] / data['Avg. Area Number of Rooms']
+
+X = df[['Price Per Room', 'Avg. Area Income', 'Avg. Area House Age', 'Avg. Area Number of Rooms', 'Avg. Area Number of Bedrooms', 'Price']]
